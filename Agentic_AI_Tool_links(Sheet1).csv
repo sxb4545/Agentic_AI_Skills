@@ -1,0 +1,46 @@
+Tool/Library,Mapped Module(s),Paid?,Alternative(s),Web Link
+Frameworks & Orchestration,,,,
+LangChain,"6, 7, 9-17, 19-21",No,–,https://www.langchain.com/
+Autogen & Autogen Studio,"2, 8, 9, 10, 11, 12, 17, 20",No,–,https://microsoft.github.io/autogen/
+Flowise,"1, 8, 9, 15, 19, 20, 21",No,–,https://flowiseai.com/
+CrewAI,"9, 10, 11, 19, 21",No (Currently),"Guardrails AI, LangGraph",https://www.crewai.com/
+LangFlow,"4, 9, 20",No,–,https://www.langflow.org/
+OpenAgents,"9, 19, 20",No,–,https://github.com/xlang-ai/OpenAgents
+AgentVerse,"10, 14",No (Beta),"Autogen, CrewAI",https://github.com/OpenBMB/AgentVerse
+N8N,9,No (Free tier),–,https://n8n.io/
+Guardrails AI,18,No,–,https://www.guardrailsai.com/
+AI Models & APIs,,,,
+OpenAI (All services),"1, 2, 5, 6, 7, 9, 12, 13, 14, 18, 21",Yes (Pay-as-you-go),"Hugging Face Transformers, Cohere API",https://openai.com/
+Hugging Face,"5, 6, 15, 16, 21",No,–,https://huggingface.co/
+Google SDK / ADK,"7, 9",Yes (Free tier),–,https://ai.google.dev/
+Claude,12,Yes (Free tier),–,https://claude.ai/
+Groq,7,Yes (Free tier),–,https://groq.com/
+Vector Databases,,,,
+ChromaDB,"6, 12, 15, 17, 21",No,FAISS,https://www.trychroma.com/
+Pinecone,"12, 15, 18, 21",Yes (Free tier),"ChromaDB, FAISS",https://www.pinecone.io/
+FAISS,"6, 12, 20",No,–,https://faiss.ai/
+Development & Deployment,,,,
+Python,"1, 3, 2007",No,–,https://www.python.org/
+Jupyter,"1, 3",No,–,https://jupyter.org/
+Replit,"2, 16",No (Free tier),"GitHub Pages, Local development",https://replit.com/
+Pydantic,"7, 9",No,–,https://pydantic.dev/
+Streamlit,"16, 19, 21",No,Gradio,https://streamlit.io/
+FastAPI,16,No,Flask,https://fastapi.tiangolo.com/
+Render,16,Partially Paid,"GitHub Pages, Streamlit Community Cloud",https://render.com/
+Gradio,17,No,Streamlit,https://www.gradio.app/
+Monitoring & Debugging,,,,
+LangSmith,"1, 16, 17",Yes (Free tier),"LangFuse, Custom logging",https://www.langchain.com/langsmith
+PromptLayer,"2, 13, 17",Yes,"LangSmith, LangFuse, Manual tracing",https://promptlayer.com/
+AgentOps,"16, 17",Yes (Free tier),"LangSmith, Manual instrumentation",https://www.agentops.ai/
+LangFuse,1,No,LangSmith,https://langfuse.com/
+Machine Learning & Visualization,,,,
+Google Teachable Machine,"3, 4",No,–,https://teachablemachine.withgoogle.com/
+Scikit-learn,"4, 7",No,–,https://scikit-learn.org/
+TensorFlow Playground,"4, 8",No,–,https://playground.tensorflow.org/
+Python Tutor,2,No,–,https://pythontutor.com/
+Tokenizer Visualizers,"5, 10",No,–,https://tiktokenizer.vercel.app/
+CleanRL,14,No,"Stable Baselines3, PettingZoo",https://github.com/vwxyzjn/cleanrl
+t-SNE tools,6,No,–,https://www.scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html
+Ethics & Resources,,,,
+AI Fairness Checklist,18,N/A,–,https://ai.google/responsibilities/fairness-resources/
+Ethics Cards Toolkit,18,N/A,–,https://www.digitalcatapult.org.uk/work-with-us/expertise/ai-and-machine-learning/ethics-framework/ethics-cards
