@@ -10,7 +10,7 @@ The goal is to teach the practical engineering skills needed to build LLM-powere
 
 - **[Lectures/](Lectures)** — Weekly teaching material (slides, notebooks, demos, datasets).
 - **[Assignments/](Assignments)** — Practice projects and solution notebooks.
-- **[Blogs/](Blogs)** — Supporting write-ups.
+- **[Blogs/](Blogs)** — Supporting write-ups and visual explainers (images/GIFs).
 - **[Agentic_AI_Tool_links(Sheet1).csv](Agentic_AI_Tool_links(Sheet1).csv)** — Curated list of agentic AI tools and links.
 
 ## Lectures overview
@@ -53,6 +53,20 @@ The workshop is organized into six runnable modules under `modules/`:
 6. **Agentic RAG** — Custom LangChain tools, agents with OpenAI function calling, conversation memory, and multi-step reasoning that compares agentic vs. direct RAG.
 
 **Covers:** The end-to-end RAG lifecycle — embeddings, chunking, indexing, retrieval-augmented generation, evaluation, and combining RAG with agents.
+
+### Week 3 — Agentic RAG ([Lectures/Week3_Agentic_RAG](Lectures/Week3_Agentic_RAG))
+
+Extends the Week 2 RAG foundations toward fully agentic, RAG-powered knowledge agents. Currently provides the lecture slide decks (PDF) for RAG-Powered Knowledge Agents.
+
+**Covers:** Bringing agents and RAG together into multi-step, tool-using knowledge assistants.
+
+## Assignments overview
+
+Hands-on practice projects that reinforce each week's material ([Assignments/](Assignments)):
+
+- **[Assignment0_CSVAgent](Assignments/Assignment0_CSVAgent)** — A Streamlit web app that answers natural-language questions over uploaded CSV files using a LangChain pandas DataFrame agent (`gpt-4o-mini`), with bundled sample data and strict "answer from data only" grounding.
+- **[Assignment_1](Assignments/Assignment_1)** — Agentic AI foundations & reflex agents assignment review, with a solution notebook and slides.
+- **[Assignment2](Assignments/Assignment2)** — A self-contained copy of the SupportDesk-RAG workshop (six modules plus concept guides) for completing the Week 2 RAG assignment. See [Assignment2/README.md](Assignments/Assignment2/README.md).
 
 ## Getting started
 

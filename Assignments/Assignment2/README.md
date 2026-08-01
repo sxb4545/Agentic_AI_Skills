@@ -260,44 +260,57 @@ done
 ## 📁 Repository Structure
 
 ```
-SupportDesk-RAG-Workshop/
-├── README.md                    # This file
-├── requirements.txt             # Python dependencies
-├── .env.example                # Environment template
-├── POST_CLASS_GUIDE.md         # Post-workshop learning guide
+Assignment2/
+├── README.md                      # This file
+├── requirements.txt               # Python dependencies
+├── .env.example                   # Environment template
+├── .gitignore
+├── POST_CLASS_GUIDE.md            # Post-workshop learning guide
+├── SUMMARY_Week2_Assignment2.md   # Assignment summary
+├── 1-Embeddings.md                # Concept guide: embeddings
+├── 2-Chunking.md                  # Concept guide: chunking
+├── 3-Indexing.md                  # Concept guide: indexing
 ├── data/
-│   └── synthetic_tickets.json  # Sample support tickets
+│   └── synthetic_tickets.json     # Sample support tickets
 └── modules/
     ├── 1_embeddings/
-    │   ├── demo.py             # Working demo code
-    │   ├── notes.md            # Instructor notes
-    │   └── exercises.md        # Practice exercises
+    │   ├── demo.py                # Working demo code
+    │   ├── solutions.py           # Exercise solutions
+    │   ├── assignment2_solution.py
+    │   ├── notes.md               # Instructor notes
+    │   └── exercises.md           # Practice exercises
     ├── 2_chunking/
     │   ├── demo.py
+    │   ├── solutions.py
+    │   ├── assignment2_solution.py
     │   ├── notes.md
-    │   └── exercises.md
+    │   ├── exercises.md
+    │   ├── chroma_db/             # Persisted vector store (generated)
+    │   └── assignment2_chroma_db/ # Persisted vector store (generated)
     ├── 3_indexing/
     │   ├── demo.py
+    │   ├── solutions.py
+    │   ├── assignment2_solution.py
     │   ├── notes.md
     │   └── exercises.md
     ├── 4_rag_pipeline/
     │   ├── demo.py
-    │   ├── notes.md
-    │   └── exercises.md
-    ├── 5_evaluation/
-    │   ├── demo.py
+    │   ├── solutions.py
     │   ├── notes.md
     │   ├── exercises.md
+    │   └── langchain_component_stack_guide.md
+    ├── 5_evaluation/
+    │   ├── demo.py
     │   ├── solutions.py
+    │   ├── notes.md
+    │   ├── exercises.md
     │   └── evaluation_queries.json
     └── 6_agentic_rag/
         ├── demo.py
-        ├── notes.md
-        ├── exercises.md
         ├── solutions.py
         ├── tools.py
-        ├── test_setup.py
-        └── README.md
+        ├── notes.md
+        └── exercises.md
 ```
 
 ---
