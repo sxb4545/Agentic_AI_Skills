@@ -65,8 +65,29 @@ Extends the Week 2 RAG foundations toward fully agentic, RAG-powered knowledge a
 Hands-on practice projects that reinforce each week's material ([Assignments/](Assignments)):
 
 - **[Assignment0_CSVAgent](Assignments/Assignment0_CSVAgent)** — A Streamlit web app that answers natural-language questions over uploaded CSV files using a LangChain pandas DataFrame agent (`gpt-4o-mini`), with bundled sample data and strict "answer from data only" grounding.
+
 - **[Assignment_1](Assignments/Assignment_1)** — Agentic AI foundations & reflex agents assignment review, with a solution notebook and slides.
+
 - **[Assignment2](Assignments/Assignment2)** — A self-contained copy of the SupportDesk-RAG workshop (six modules plus concept guides) for completing the Week 2 RAG assignment. See [Assignment2/README.md](Assignments/Assignment2/README.md).
+
+- **[Assignment3](Assignments/Assignment3)** — Deep-dive study materials for the advanced RAG and Agentic RAG topics from Week 2/3. Contains the original slide decks (`.docx` and `.pdf`) plus two sets of extracted notes for each topic:
+  - **RAG Pipeline** — Prompt-template engineering, retrieval parameter tuning (`k`, MMR), chain construction, and anti-hallucination grounding strategies.
+  - **Evaluation** — Two-layer evaluation (retrieval: Precision@K / Recall@K / F1; generation: groundedness, completeness) and LLM-as-judge scoring patterns.
+  - **Agentic RAG** — ReAct-style tool-calling agents, tool description quality, priority/category search tools, and conversational memory across agent turns.
+  - Also includes a **Financial Bot with LLMs** reference PDF covering LLM-powered financial Q&A patterns.
+
+  **Concepts covered:** advanced prompt engineering, retrieval quality evaluation, LLM-as-judge, building and extending LangChain agent tools, agentic reasoning traces.
+
+- **[Assignment4](Assignments/Assignment4)** — A production-style **Smart Travel Planning Multi-Agent System** orchestrated with **LangGraph**. Four specialized agents collaborate to plan a complete trip end-to-end:
+  - **FlightSearchAgent** — Queries SerpApi (Google Flights engine); summarizes best-value, premium, and budget-conscious flight options.
+  - **HotelSearchAgent** — Queries SerpApi (Google Hotels engine); summarizes location/value, comfort, and budget hotel picks.
+  - **ResearchAgent** — Uses Tavily deep search to answer traveler questions (visa rules, transit passes, weather, local tips) in parallel.
+  - **ItineraryPlannerAgent** — Merges all specialist outputs into a day-by-day itinerary with a risk checklist and booking-priority order.
+  - **TravelPlannerMultiAgentSystem** (coordinator) — Builds a `LangGraph StateGraph` where flight, hotel, and research nodes run as parallel branches, then feed into the itinerary planner node. Also exposes `plan_multiple_trips()` to handle batches of user requests concurrently.
+
+  **Concepts covered:** LangGraph `StateGraph` workflow design, parallel agent node execution, typed state (`TypedDict`), external API tool adapters (SerpApi + Tavily), multi-agent fan-out/fan-in patterns, and unified result aggregation.
+
+  **External keys required:** `OPENAI_API_KEY` (required), `SERPAPI_API_KEY` and `TAVILY_API_KEY` (recommended; agents degrade gracefully without them). See [Assignment4/README.md](Assignments/Assignment4/README.md) for full setup.
 
 ## Getting started
 
