@@ -60,6 +60,18 @@ Extends the Week 2 RAG foundations toward fully agentic, RAG-powered knowledge a
 
 **Covers:** Bringing agents and RAG together into multi-step, tool-using knowledge assistants.
 
+### Week 4 — Multi-Agent AI ([Lectures/Week4_Multi_Agent_AI](Lectures/Week4_Multi_Agent_AI))
+
+Introduces multi-agent systems for coordinating specialized agents across complex, stateful workflows. The live class focuses on when multi-agent designs are useful, including context isolation, parallel execution, domain specialization, strict workflow sequencing, scalability, and fault recovery. It also emphasizes that coordination overhead should be justified: a single agent is often preferable for simple tasks or workflows that require all intermediate context to remain shared.
+
+- **Context engineering and quarantine** — Give each worker only the information, tools, and instructions needed for its responsibility; return focused results to the coordinator instead of exposing every intermediate step.
+- **Common coordination patterns** — Specialized worker agents, coordinator/orchestrator agents, sequential pipelines, conditional routing, and parallel fan-out/fan-in workflows.
+- **LangGraph implementation model** — Define typed state, implement node functions, connect nodes with normal or conditional edges, use reducers to merge updates, compile the graph, and test each route.
+- **Production workflow capabilities** — Checkpointing and persistence allow workflows to resume, support human review, recover from failures, and retain state across turns. Shared stores can retain user preferences across execution threads, while tracing, streaming, and state inspection support observability.
+- **Reference implementation** — The lecture's travel-planner example coordinates flight, hotel, and research agents, using SerpApi for travel searches and Tavily for web research.
+
+See the [Live Class Slides](Lectures/Week4_Multi_Agent_AI/Live%20Class%20Slides_Multi-Agent%20Systems_SWEs%20(1).pdf) and [Week 4 Roadmap](Lectures/Week4_Multi_Agent_AI/Roadmap_Week%204_SWEs.pdf) for the complete lecture material.
+
 ## Assignments overview
 
 Hands-on practice projects that reinforce each week's material ([Assignments/](Assignments)):
@@ -88,6 +100,13 @@ Hands-on practice projects that reinforce each week's material ([Assignments/](A
   **Concepts covered:** LangGraph `StateGraph` workflow design, parallel agent node execution, typed state (`TypedDict`), external API tool adapters (SerpApi + Tavily), multi-agent fan-out/fan-in patterns, and unified result aggregation.
 
   **External keys required:** `OPENAI_API_KEY` (required), `SERPAPI_API_KEY` and `TAVILY_API_KEY` (recommended; agents degrade gracefully without them). See [Assignment4/README.md](Assignments/Assignment4/README.md) for full setup.
+
+- **[Assignment5](Assignments/Assignment5)** — A **Multi-Agent Content Writer** built with LangGraph. The system routes each request to one of three specialized paths:
+  - **SEO Blog Writer** — Uses Tavily deep research for background and a quick Tavily search for SEO keywords or current examples, then produces a structured article with headings, FAQ content, citations when available, and a call to action.
+  - **X/Twitter Writer** — Uses the internet-search tool for trends and hashtags, then creates concise posts under 280 characters.
+  - **General Handler** — Answers greetings, questions, and follow-ups using the persisted conversation history.
+
+  The implementation defines a typed shared state with an `add_messages` reducer, a model-based router, tool-calling loops with LangGraph `ToolNode`s, conditional edges, and a `MemorySaver` checkpointer. The notebook loads `OPENAI_API_KEY`, `OPENAI_CHAT_MODEL`, `TAVILY_API_KEY`, and `SERPAPI_API_KEY` from the local `Assignments/Assignment5/.env` file. Tavily powers both research tools, with advanced search used for deeper research and basic search used for lighter SEO/trend lookups. Ready-to-run tests cover all three routes and a same-thread persistence follow-up such as “What was my last request?”. See [Assignment5_Langgraph.ipynb](Assignments/Assignment5/Assignment5_Langgraph.ipynb).
 
 ## Getting started
 
