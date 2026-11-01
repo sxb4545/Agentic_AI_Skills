@@ -1,128 +1,201 @@
 # Agentic_AI_Skills
 
-A hands-on training repository for building **Agentic AI** and **Retrieval-Augmented Generation (RAG)** applications. It collects the lecture material, demo notebooks, workshops, and assignments used across a multi-week course that takes you from Python foundations to production-style agent and RAG systems.
-
-## What this repo is about
-
-The goal is to teach the practical engineering skills needed to build LLM-powered agents: calling models programmatically, giving them tools via function calling, grounding them in your own data with RAG, and evaluating the results. Each week builds on the previous one, mixing slides, runnable notebooks/scripts, sample datasets, and exercises.
+A hands-on training repository for **Agentic AI**, **Retrieval-Augmented Generation (RAG)**, multi-agent systems, conversational applications, and production LLM operations. It combines weekly slides, notebooks, workshop code, study guides, and assignments.
 
 ## Repository layout
 
-- **[Lectures/](Lectures)** — Weekly teaching material (slides, notebooks, demos, datasets).
-- **[Assignments/](Assignments)** — Practice projects and solution notebooks.
-- **[Blogs/](Blogs)** — Supporting write-ups and visual explainers (images/GIFs).
-- **[Agentic_AI_Tool_links(Sheet1).csv](Agentic_AI_Tool_links(Sheet1).csv)** — Curated list of agentic AI tools and links.
+- **[Lectures/](Lectures/)** - Weekly teaching material and nested demo/workshop projects.
+- **[Assignments/](Assignments/)** - Assignment implementations, templates, exercise sheets, and reference material.
+- **[Capstone/](Capstone/)** - Separate capstone briefs, evaluation material, and project archives.
+- **[Blogs/](Blogs/)** - Supporting visual explainers.
+- **[Agentic_AI_Tool_links(Sheet1).csv](Agentic_AI_Tool_links%28Sheet1%29.csv)** - Curated tool links.
 
-## Lectures overview
+## How to read this overview
 
-### Week 0 — Prerequisites: Python for GenAI ([Lectures/Week_1_Prerequisites](Lectures/Week_1_Prerequisites))
+This inventory summarizes the materials present in the local workspace, including nested lecture folders. Virtual environments, credentials, caches, and generated database files are excluded.
 
-Foundational material to get everyone ready before the agentic content begins.
+- **Assignment numbers are not lecture-week numbers.** In particular, Assignment 5 implements the Week 4 content-writer assignment; it is not the Week 5 multimodal assignment.
+- **Available code does not prove completion.** "Implementation available" and "reference solutions available" describe repository contents, not successful execution, grading, or submission.
+- **Folder numbering differs from slide numbering.** Week 9 and Week 11 contain slides labeled Week 8. The dedicated Week 8 folder is empty; ADK/A2A examples are inside Week 6.
+- **Some scanned projects are local-only at the time of this update:** the [SupportDesk workshop](Lectures/Week2_RAG/SupportDesk-RAG-Workshop/), [AxiomCart demo](Lectures/Week5_Conversational%26MultiModalAgenticAI/axiomcart-ai-assistant/), and [Week 6 Demo folder](Lectures/Week6_MCP/Demo/) are untracked. Their README links will require those folders to be included when sharing or cloning the repository.
 
-- **Python for GenAI** — Core Python refresher (variables, data types, control flow) delivered through a live-class notebook and slides, aimed at the level needed to work with LLM SDKs.
-- **Hello Agent — CSV FAQ Agent (stub)** — A first "hello world" agent that uses LangChain's `create_pandas_dataframe_agent` to answer natural-language questions over CSV knowledge bases (credit card terms, e-commerce FAQs, hospital policy, SaaS docs), including auto-downloading the sample data.
-- **Roadmap & study guides** — Course overview, learner guide, an "Agentic AI cheatbook," and a Week 0 mini-project.
+## Weekly lectures: topics and material coverage
 
-**Covers:** Python essentials, working with tabular data via pandas, and your first taste of an LLM-driven data agent.
+### Prerequisites / Week 0 - Python and a first data agent
 
-### Week 1 — Agentic AI Foundations ([Lectures/Week1_Agentic_AI](Lectures/Week1_Agentic_AI))
+**Folder:** [Week_1_Prerequisites](Lectures/Week_1_Prerequisites/)
 
-Introduces the core concepts of AI agents and how to build them with LLMs and tools.
+- Python types, operators, strings, collections, control flow, and functions; pandas data creation, filtering, and sorting.
+- A live-class notebook, slides, learner guide, roadmap, and agentic-AI cheatbook establish the foundations for using LLM SDKs.
+- The CSV FAQ starter introduces natural-language questions over tabular data, with sample e-commerce, credit-card, hospital, and SaaS datasets.
+- The ungraded mini-project asks for a Streamlit app with multiple CSV uploads, previews, factual lookup/numeric answers, and explicit missing-information responses. It does not require vector retrieval.
 
-- **Calling LLMs programmatically** — Connect to major LLM providers two ways: directly via official SDKs (OpenAI, Anthropic Claude, Google Gemini) and through a unified aggregator (OpenRouter). Explains message formats, system prompts, and provider differences, with keys loaded from a local `.env` file.
-- **CRM Lead Qualifier Agent** — An end-to-end agent that enriches a sales lead from an email address: extracts the company domain, looks up (mocked) company data, checks CRM history, and computes a lead score. Built with **OpenAI function calling** to bridge the LLM to real Python "tools" in a structured loop.
-- **Additional (optional) notebooks** — Classic agent architectures for context:
-  - *Reflex Agents* — Simple condition–action (rule-based) reactive agents.
-  - *Goal-based Agents* — Agents that plan actions toward an explicit goal.
-  - *Utility Agents* — Agents that choose actions by maximizing a utility/score function.
-- **Slides, roadmap, and a CRM agent README** round out the material.
+**Practice:** [Assignment 0](Assignments/Assignment0_CSVAgent/README.md) supplies the CSV web-app implementation. The lecture notebook remains a starter.
 
-**Covers:** What makes an LLM an "agent," function/tool calling, multi-provider integration, and foundational agent design patterns (reflex, goal-based, utility).
+### Week 1 - Agentic AI foundations and tool calling
 
-### Week 2 — RAG-Powered Knowledge Agents ([Lectures/Week2_RAG](Lectures/Week2_RAG))
+**Folder:** [Week1_Agentic_AI](Lectures/Week1_Agentic_AI/)
 
-A full hands-on RAG workshop — **SupportDesk-RAG** — that builds a support-ticket retrieval and troubleshooting assistant with strong anti-hallucination safeguards. See [SupportDesk-RAG-Workshop/README.md](Lectures/Week2_RAG/SupportDesk-RAG-Workshop/README.md) for setup.
+- LLM capabilities and limitations, provider APIs, structured tool schemas, and the think/act/observe execution loop.
+- The nested [demo notebooks](Lectures/Week1_Agentic_AI/Demo%20Notebooks-20260719T080450Z-1-001/Demo%20Notebooks/) compare OpenAI, Anthropic, Gemini, and OpenRouter calls.
+- The CRM lead-qualification demo combines company/domain lookup, CRM history, and lead scoring through function calling.
+- Optional notebooks illustrate simple/model-based reflex, goal-based, and utility-based agents.
+- The [lecture assignment notebook](Lectures/Week1_Agentic_AI/Assignment/Assignment_Week1.ipynb) builds an IT first responder: inspect health/logs, restart critical services, and escalate complex failures.
 
-The workshop is organized into six runnable modules under `modules/`:
+**Practice:** [Assignment 1 solution](Assignments/Assignment_1/Assignment_solution.ipynb) covers tool implementation, schemas, dispatch, and tool-result messages. Server data and actions are simulated.
 
-1. **Embeddings** — Generate OpenAI embeddings, compute semantic similarity, and visualize relationships.
-2. **Chunking** — Fixed-size vs. recursive vs. semantic chunking, structure-aware splitting, and building a Chroma vector store.
-3. **Indexing Strategies** — Compare Vector, Summary, Tree, Keyword Table, and Hybrid indexes using LlamaIndex.
-4. **RAG Pipeline** — A complete RAG architecture with LangChain, prompt engineering for grounded responses, and anti-hallucination strategies.
-5. **Evaluation** — Two-layer evaluation: retrieval metrics (Precision@K, Recall@K, F1) and generation metrics (groundedness, completeness) using FAISS and LLM-as-judge.
-6. **Agentic RAG** — Custom LangChain tools, agents with OpenAI function calling, conversation memory, and multi-step reasoning that compares agentic vs. direct RAG.
+### Week 2 - RAG foundations: embeddings, chunking, and indexing
 
-**Covers:** The end-to-end RAG lifecycle — embeddings, chunking, indexing, retrieval-augmented generation, evaluation, and combining RAG with agents.
+**Folder:** [Week2_RAG](Lectures/Week2_RAG/)
 
-### Week 3 — Agentic RAG ([Lectures/Week3_Agentic_RAG](Lectures/Week3_Agentic_RAG))
+- Embeddings, cosine similarity, semantic versus keyword matching, top-K selection, and score thresholds.
+- Fixed-size, recursive, semantic, and structure-aware chunking; overlap, Chroma persistence, metadata filters, and retrieval diversity.
+- LlamaIndex vector, summary, tree, keyword, and hybrid indexing strategies, including index comparison and tuning.
+- The nested [SupportDesk-RAG workshop](Lectures/Week2_RAG/SupportDesk-RAG-Workshop/README.md) uses support tickets and contains **six** modules. Modules 1-3 teach Week 2 foundations; modules 4-6 also support Week 3.
+- Each module includes demo code, notes, exercises, and reference solutions. The first three additionally contain dedicated Assignment 2 solution scripts.
 
-Extends the Week 2 RAG foundations toward fully agentic, RAG-powered knowledge agents. Currently provides the lecture slide decks (PDF) for RAG-Powered Knowledge Agents.
+**Practice:** [Assignment 2 summary](Assignments/Assignment2/SUMMARY_Week2_Assignment2.md) and answer sheets document the embeddings, chunking, and indexing exercises. The full workshop should not be mistaken for the scope of Assignment 2 alone.
 
-**Covers:** Bringing agents and RAG together into multi-step, tool-using knowledge assistants.
+### Week 3 - RAG pipelines, evaluation, and agentic retrieval
 
-### Week 4 — Multi-Agent AI ([Lectures/Week4_Multi_Agent_AI](Lectures/Week4_Multi_Agent_AI))
+**Folder:** [Week3_Agentic_RAG](Lectures/Week3_Agentic_RAG/)
 
-Introduces multi-agent systems for coordinating specialized agents across complex, stateful workflows. The live class focuses on when multi-agent designs are useful, including context isolation, parallel execution, domain specialization, strict workflow sequencing, scalability, and fault recovery. It also emphasizes that coordination overhead should be justified: a single agent is often preferable for simple tasks or workflows that require all intermediate context to remain shared.
+- Retrieve/context/generate pipelines, LangChain LCEL composition, grounding, citations, retrieval tuning, and multi-turn conversations.
+- Retrieval Precision@K, Recall@K, and F1; generation groundedness, completeness, and relevance; LLM-as-judge, failure analysis, and A/B comparisons.
+- Agentic RAG with tool descriptions, semantic/category/ID lookup, priority support, multi-step requests, conversation memory, and error handling.
+- This folder contains slides and a roadmap; runnable practice is shared with the [SupportDesk modules](Lectures/Week2_RAG/SupportDesk-RAG-Workshop/modules/), rather than duplicated here:
+  - [Module 4: RAG pipeline exercises](Lectures/Week2_RAG/SupportDesk-RAG-Workshop/modules/4_rag_pipeline/exercises.md) - prompts, citations, fallback, filters, streaming, and history.
+  - [Module 5: evaluation exercises](Lectures/Week2_RAG/SupportDesk-RAG-Workshop/modules/5_evaluation/exercises.md) - metrics, judges, latency/cost, and release decisions.
+  - [Module 6: agentic RAG exercises](Lectures/Week2_RAG/SupportDesk-RAG-Workshop/modules/6_agentic_rag/exercises.md) - tool routing, multi-step queries, interaction, and memory.
 
-- **Context engineering and quarantine** — Give each worker only the information, tools, and instructions needed for its responsibility; return focused results to the coordinator instead of exposing every intermediate step.
-- **Common coordination patterns** — Specialized worker agents, coordinator/orchestrator agents, sequential pipelines, conditional routing, and parallel fan-out/fan-in workflows.
-- **LangGraph implementation model** — Define typed state, implement node functions, connect nodes with normal or conditional edges, use reducers to merge updates, compile the graph, and test each route.
-- **Production workflow capabilities** — Checkpointing and persistence allow workflows to resume, support human review, recover from failures, and retain state across turns. Shared stores can retain user preferences across execution threads, while tracing, streaming, and state inspection support observability.
-- **Reference implementation** — The lecture's travel-planner example coordinates flight, hotel, and research agents, using SerpApi for travel searches and Tavily for web research.
+**Practice:** [Assignment 3](Assignments/Assignment3/) holds exercise documents, extracted notes, review slides, and a Financial Bot reference PDF. Reference implementations for modules 4-6 are also available in [Assignment 2's modules](Assignments/Assignment2/modules/); Assignment 3 itself has no standalone application implementation.
 
-See the [Live Class Slides](Lectures/Week4_Multi_Agent_AI/Live%20Class%20Slides_Multi-Agent%20Systems_SWEs%20(1).pdf) and [Week 4 Roadmap](Lectures/Week4_Multi_Agent_AI/Roadmap_Week%204_SWEs.pdf) for the complete lecture material.
+### Week 4 - Multi-agent architecture and LangGraph
 
-## Assignments overview
+**Folder:** [Week4_Multi_Agent_AI](Lectures/Week4_Multi_Agent_AI/)
 
-Hands-on practice projects that reinforce each week's material ([Assignments/](Assignments)):
+- When specialization, context isolation, parallelism, and coordination justify multiple agents rather than one.
+- Coordinator/worker patterns, sequential workflows, conditional routing, and parallel fan-out/fan-in.
+- LangGraph shared state, reducers, nodes, edges, graph compilation, checkpoints, and shared memory.
+- Slides use travel planning to demonstrate specialist flight, hotel, and research agents; setup material covers search-provider access.
+- The roadmap's assignment is a **smart content assistant**, distinct from the travel-planner teaching example.
 
-- **[Assignment0_CSVAgent](Assignments/Assignment0_CSVAgent)** — A Streamlit web app that answers natural-language questions over uploaded CSV files using a LangChain pandas DataFrame agent (`gpt-4o-mini`), with bundled sample data and strict "answer from data only" grounding.
+**Practice:** [Assignment 4](Assignments/Assignment4/README.md) implements the travel example. [Assignment 5](Assignments/Assignment5/) implements the content-writer assignment with routing, tool loops, and conversation persistence.
 
-- **[Assignment_1](Assignments/Assignment_1)** — Agentic AI foundations & reflex agents assignment review, with a solution notebook and slides.
+### Week 5 - Conversational and multimodal systems
 
-- **[Assignment2](Assignments/Assignment2)** — A self-contained copy of the SupportDesk-RAG workshop (six modules plus concept guides) for completing the Week 2 RAG assignment. See [Assignment2/README.md](Assignments/Assignment2/README.md).
+**Folder:** [Week5_Conversational&MultiModalAgenticAI](Lectures/Week5_Conversational%26MultiModalAgenticAI/)
 
-- **[Assignment3](Assignments/Assignment3)** — Deep-dive study materials for the advanced RAG and Agentic RAG topics from Week 2/3. Contains the original slide decks (`.docx` and `.pdf`) plus two sets of extracted notes for each topic:
-  - **RAG Pipeline** — Prompt-template engineering, retrieval parameter tuning (`k`, MMR), chain construction, and anti-hallucination grounding strategies.
-  - **Evaluation** — Two-layer evaluation (retrieval: Precision@K / Recall@K / F1; generation: groundedness, completeness) and LLM-as-judge scoring patterns.
-  - **Agentic RAG** — ReAct-style tool-calling agents, tool description quality, priority/category search tools, and conversational memory across agent turns.
-  - Also includes a **Financial Bot with LLMs** reference PDF covering LLM-powered financial Q&A patterns.
+- Structured intent routing, conversational state, specialist tool loops, RAG, clarification, human-in-the-loop workflows, and optional multi-agent synthesis.
+- Audio material introduces speech input/output alongside text interactions.
+- The nested [AxiomCart instructor demo](Lectures/Week5_Conversational%26MultiModalAgenticAI/axiomcart-ai-assistant/README.md) is an e-commerce assistant. Its source separates configuration/data, state, routing nodes, graph orchestration, Chroma retrieval, product/order/escalation tools, and voice handling; an instructor guide accompanies it.
+- The [multimodal assignment brief](Lectures/Week5_Conversational%26MultiModalAgenticAI/Multimodal%20Conversational%20System_Assignment.docx) instead specifies **SnackStack**, a food-order assistant: menu retrieval over eight dishes, order lookup by ID/tracking ID/email, structured routing, and missing-identifier clarification using `interrupt()` and `Command(resume=...)`. Parallel synthesis and voice are optional extensions.
 
-  **Concepts covered:** advanced prompt engineering, retrieval quality evaluation, LLM-as-judge, building and extending LangChain agent tools, agentic reasoning traces.
+**Practice:** The SnackStack brief and supporting references are present, but no matching SnackStack solution code was found. AxiomCart illustrates related techniques; Assignment 5's content writer is a different assignment.
 
-- **[Assignment4](Assignments/Assignment4)** — A production-style **Smart Travel Planning Multi-Agent System** orchestrated with **LangGraph**. Four specialized agents collaborate to plan a complete trip end-to-end:
-  - **FlightSearchAgent** — Queries SerpApi (Google Flights engine); summarizes best-value, premium, and budget-conscious flight options.
-  - **HotelSearchAgent** — Queries SerpApi (Google Hotels engine); summarizes location/value, comfort, and budget hotel picks.
-  - **ResearchAgent** — Uses Tavily deep search to answer traveler questions (visa rules, transit passes, weather, local tips) in parallel.
-  - **ItineraryPlannerAgent** — Merges all specialist outputs into a day-by-day itinerary with a risk checklist and booking-priority order.
-  - **TravelPlannerMultiAgentSystem** (coordinator) — Builds a `LangGraph StateGraph` where flight, hotel, and research nodes run as parallel branches, then feed into the itinerary planner node. Also exposes `plan_multiple_trips()` to handle batches of user requests concurrently.
+### Week 6 - MCP, Google ADK, and A2A
 
-  **Concepts covered:** LangGraph `StateGraph` workflow design, parallel agent node execution, typed state (`TypedDict`), external API tool adapters (SerpApi + Tavily), multi-agent fan-out/fan-in patterns, and unified result aggregation.
+**Folder:** [Week6_MCP](Lectures/Week6_MCP/)
 
-  **External keys required:** `OPENAI_API_KEY` (required), `SERPAPI_API_KEY` and `TAVILY_API_KEY` (recommended; agents degrade gracefully without them). See [Assignment4/README.md](Assignments/Assignment4/README.md) for full setup.
+- Model Context Protocol tools, resources, prompts, initialization, discovery, content types, client/tool loops, and SSE/streamable-HTTP transport.
+- Google ADK agents, session state, sequential/parallel/loop workflows, agents as tools, callbacks, and event streams.
+- A2A lifecycle, context threading, message parts/artifacts, and networked agent orchestration.
+- The nested [real-estate negotiation simulator](Lectures/Week6_MCP/Demo/real-estate-negotiation-simulator/README.md) is organized into:
+  - [m1_mcp](Lectures/Week6_MCP/Demo/real-estate-negotiation-simulator/m1_mcp/) - pricing/inventory servers, clients, transport/protocol demos, study notes, exercises, and solutions.
+  - [m2_adk_multiagents](Lectures/Week6_MCP/Demo/real-estate-negotiation-simulator/m2_adk_multiagents/) - ADK/A2A demos, buyer/seller negotiation agents, orchestration, notes, exercises, and solutions.
 
-- **[Assignment5](Assignments/Assignment5)** — A **Multi-Agent Content Writer** built with LangGraph. The system routes each request to one of three specialized paths:
-  - **SEO Blog Writer** — Uses Tavily deep research for background and a quick Tavily search for SEO keywords or current examples, then produces a structured article with headings, FAQ content, citations when available, and a call to action.
-  - **X/Twitter Writer** — Uses the internet-search tool for trends and hashtags, then creates concise posts under 280 characters.
-  - **General Handler** — Answers greetings, questions, and follow-ups using the persisted conversation history.
+**Practice:** Three MCP exercises cover a walk-score tool, a multi-server agent, and server-failure handling. Nine ADK/A2A exercises cover budget caps, stuck detection, multi-round context, mediation, prompt-injection defense, human approval, parallel sellers, shared market intelligence, and adaptive strategies. Matching reference-solution folders exist; there is no separate numbered assignment under [Assignments](Assignments/).
 
-  The implementation defines a typed shared state with an `add_messages` reducer, a model-based router, tool-calling loops with LangGraph `ToolNode`s, conditional edges, and a `MemorySaver` checkpointer. The notebook loads `OPENAI_API_KEY`, `OPENAI_CHAT_MODEL`, `TAVILY_API_KEY`, and `SERPAPI_API_KEY` from the local `Assignments/Assignment5/.env` file. Tavily powers both research tools, with advanced search used for deeper research and basic search used for lighter SEO/trend lookups. Ready-to-run tests cover all three routes and a same-thread persistence follow-up such as “What was my last request?”. See [Assignment5_Langgraph.ipynb](Assignments/Assignment5/Assignment5_Langgraph.ipynb).
+### Week 7 - Hybrid search and retrieval
+
+**Folder:** [Week7_HybridSearch](Lectures/Week7_HybridSearch/)
+
+- Dense versus sparse retrieval, SPLADE, and why semantic and lexical signals complement each other.
+- The [live-class notebook](Lectures/Week7_HybridSearch/Hybrid%20Search%20%26%20Retrieval%20-%20Live%20Class%20Notebook.ipynb) prepares ESCI product-search data, generates embeddings, indexes/searches with Qdrant, fuses results with reciprocal-rank fusion, and evaluates retrieval.
+- Later notebook sections expose hybrid retrieval as a LangChain agent tool.
+
+**Practice:** A worked notebook, slides, and roadmap are available. No explicit Week 7 assignment brief or separate solution was found. Assignment 2 touches hybrid indexing, but does not establish coverage of this Qdrant/SPLADE/ESCI workflow.
+
+### Week 8 - Reserved ADK/A2A folder
+
+**Folder:** [Week8_A2A_GoogleADK](Lectures/Week8_A2A_GoogleADK/)
+
+No teaching files or nested projects are present. Do not infer lecture coverage from the folder name: the available ADK/A2A demos and exercises are inside [Week 6](Lectures/Week6_MCP/Demo/real-estate-negotiation-simulator/m2_adk_multiagents/).
+
+### Week 9 - Agent observability, evaluation, and safety
+
+**Folder:** [Week9](Lectures/Week9/) - its slides are labeled **Week 8**.
+
+- Agent tracing/observability, evaluation, input/output guardrails, and production cost optimization.
+- LangSmith and Guardrails Hub setup guides accompany the teaching slides.
+- The assignment-review deck describes exercises using LangSmith, DeepEval, guardrails, and cost optimization.
+- The slides reference an external fintech workshop, but its demo/exercise/solution implementation is not present locally.
+
+**Practice:** Exercise descriptions and setup instructions are available; no corresponding local application or assignment solution was found. The earlier RAG evaluation exercises are related foundations, not substitutes for these observability/safety labs.
+
+### Week 10 - LLMOps and production operation
+
+**Folder:** [Week10_LLMOps](Lectures/Week10_LLMOps/)
+
+- Operating nondeterministic LLM applications, and how LLMOps differs from traditional MLOps.
+- [Why LLMOps demo](Lectures/Week10_LLMOps/Demo_Why_LLMOps.ipynb) - model variability, prompt-drift regression, hallucination/grounding, unreliable tools, retries/timeouts, and cost/latency.
+- [Integrated Langfuse demo](Lectures/Week10_LLMOps/Integrated_Demo_LLMOps_Langfuse.ipynb) - travel tools, prompt versioning, model routing, LangGraph workflows, exact/semantic caching, guardrails, and tracing.
+
+**Practice:** Demonstration notebooks and slides are available. No dedicated LLMOps assignment brief or submission was found.
+
+### Week 11 - Repeated observability and safety material
+
+**Folder:** [Week11](Lectures/Week11/) - its slides are also labeled **Week 8**.
+
+Contains observability/evaluation/safety slides and LangSmith/Guardrails setup guides, not a distinct new lecture implementation. The main slide PDF and Guardrails guide duplicate Week 9's files; the LangSmith guide covers the same setup topic.
+
+**Practice:** No additional demo, assignment, or solution is present in this folder.
+
+## Assignments: what each project covers
+
+| Assignment | Topic / lecture alignment | What it covers | Available material |
+|---|---|---|---|
+| [0 - CSV FAQ agent](Assignments/Assignment0_CSVAgent/README.md) | Prerequisites / Week 0 | Streamlit uploads/previews, pandas-based natural-language lookup and calculations, answer-from-data grounding, missing-information responses. | App implementation, requirements, and four sample CSV datasets. |
+| [1 - IT incident responder](Assignments/Assignment_1/Assignment_solution.ipynb) | Week 1 | Health/log investigation, restart/escalation tools, function schemas, tool dispatch, and tool-result messages in an agent loop. | Solution notebook and review slides; simulated tools/data rather than real server operations. |
+| [2 - RAG foundations](Assignments/Assignment2/SUMMARY_Week2_Assignment2.md) | Week 2, with shared Week 3 workshop material | Query/top-K/threshold experiments, semantic similarity and batching; chunk size/overlap, metadata and persistence; vector/tree/keyword/hybrid index comparison. | [Embeddings](Assignments/Assignment2/1-Embeddings.md), [chunking](Assignments/Assignment2/2-Chunking.md), and [indexing](Assignments/Assignment2/3-Indexing.md) answer sheets plus dedicated solution scripts. All six workshop modules include demos, exercises, and reference solutions. |
+| [3 - Advanced RAG materials](Assignments/Assignment3/) | Week 3 | Prompt/retrieval tuning, citations and fallback, retrieval metrics and LLM judges, agent tools, multi-step retrieval, and memory; Financial Bot reference concepts. | DOCX/PDF material and extracted exercise notes. No standalone application code here; shared implementations are in [modules 4-6](Assignments/Assignment2/modules/). |
+| [4 - Smart travel planner](Assignments/Assignment4/README.md) | Week 4 teaching example | Flight/hotel specialists using SerpApi, Tavily travel research, parallel LangGraph branches, itinerary synthesis, and concurrent trip requests. | Modular Python implementation and demo. Does not itself implement the content-writer assignment or checkpointed conversation workflow. |
+| [5 - Multi-agent content writer](Assignments/Assignment5/Assignment5_Langgraph.ipynb) | Week 4 assignment | SEO/X/general routing, Tavily deep/basic research, specialist tool loops, shared message state, conditional edges, and same-thread follow-ups with `MemorySaver`. | [Template](Assignments/Assignment5/Assignment%20Template%20-%20Multi-Agents%20Systems.ipynb), primary solution, and [alternative solution](Assignments/Assignment5/Assignment5_AlternativeSolution.ipynb). Includes example route/follow-up checks; persistence is in memory, not durable storage across process restarts. |
+
+## Lecture-to-assignment coverage and gaps
+
+**"Not covered" below means missing or not demonstrated in the available assignment material, not that a learner failed or skipped it.** A demo, a reference solution, and a completed/submitted assignment are different artifacts. This table does not invent assignment numbers for later weeks.
+
+| Lecture folder | Available assignment / exercise coverage | Status | Missing assignment or coverage gap |
+|---|---|---|---|
+| [Prerequisites / Week 0](Lectures/Week_1_Prerequisites/) | [Assignment 0](Assignments/Assignment0_CSVAgent/) implements the CSV FAQ mini-project. | Implementation available | No missing core mini-project identified; the lecture stub itself still has unfinished starter sections. |
+| [Week 1](Lectures/Week1_Agentic_AI/) | [Assignment 1](Assignments/Assignment_1/) and the [lecture assignment](Lectures/Week1_Agentic_AI/Assignment/Assignment_Week1.ipynb) cover incident tools and agent loops. | Implementation available | Multi-provider integration, CRM qualification, and optional goal/utility architectures are demos, not separate assignment solutions. Real server integration is not demonstrated. |
+| [Week 2](Lectures/Week2_RAG/) | [Assignment 2](Assignments/Assignment2/) covers embeddings, chunking, and indexing, with answer sheets and dedicated scripts. | Core coverage available | Modules 4-6 are Week 3 practice, not additional completed Assignment 2 answers. Supplied reference/bonus material is not evidence of every exercise being executed or submitted. |
+| [Week 3](Lectures/Week3_Agentic_RAG/) | [Assignment 3](Assignments/Assignment3/) contains exercise/reference documents; [shared modules 4-6](Assignments/Assignment2/modules/) have runnable reference solutions. | Reference coverage; submission unverified | No consolidated Assignment 3 application or documented exercise-run report; the optional Financial Bot has reference slides but no implementation. |
+| [Week 4](Lectures/Week4_Multi_Agent_AI/) | [Assignment 4](Assignments/Assignment4/) covers travel orchestration; [Assignment 5](Assignments/Assignment5/) covers the assigned content assistant. | Both implementations available | Durable checkpoints, cross-thread shared memory, and resumable human-review workflows are not demonstrated by these assignments. Assignment 5 uses an in-memory checkpointer. |
+| [Week 5](Lectures/Week5_Conversational%26MultiModalAgenticAI/) | [SnackStack assignment brief](Lectures/Week5_Conversational%26MultiModalAgenticAI/Multimodal%20Conversational%20System_Assignment.docx); related [AxiomCart instructor demo](Lectures/Week5_Conversational%26MultiModalAgenticAI/axiomcart-ai-assistant/). | Brief + related demo; matching solution absent | SnackStack menu/order tools, identifier clarification/resume, and its integrated conversation workflow have no matching local solution. Voice and parallel synthesis are optional, not mandatory missing tasks. |
+| [Week 6](Lectures/Week6_MCP/) | [MCP exercises](Lectures/Week6_MCP/Demo/real-estate-negotiation-simulator/m1_mcp/exercises/) and [ADK/A2A exercises](Lectures/Week6_MCP/Demo/real-estate-negotiation-simulator/m2_adk_multiagents/exercises/) have matching supplied solutions. | Workshop reference solutions available | No separate numbered assignment or learner submission/run report; do not label this week uncovered just because it has no folder under Assignments. |
+| [Week 7](Lectures/Week7_HybridSearch/) | Worked hybrid-search notebook; Assignment 2 introduces related hybrid-index concepts. | Demo only for this workflow | No explicit assignment/solution for ESCI, Qdrant dense/sparse search, SPLADE, fusion evaluation, or the hybrid agent tool. |
+| [Week 8](Lectures/Week8_A2A_GoogleADK/) | No material in this folder; ADK/A2A practice is located in Week 6. | Empty folder | No independent Week 8 lecture or assignment to assess; do not double-count Week 6 protocol exercises. |
+| [Week 9](Lectures/Week9/) | Assignment-review exercise descriptions and LangSmith/Guardrails setup guides. | Descriptions only locally | Referenced fintech workshop code is missing: no local LangSmith tracing, DeepEval evaluation, guardrails, or cost-optimization assignment implementation. |
+| [Week 10](Lectures/Week10_LLMOps/) | Why-LLMOps and integrated Langfuse teaching demos. | Demo only | No dedicated assignment applying prompt regression/versioning, routing, caching, reliability, and tracing with a documented evaluation. |
+| [Week 11](Lectures/Week11/) | Repeated Week 9 observability/safety slides and setup topics. | Repeated references only | No distinct Week 11 assignment or implementation; the same local observability/safety practice gap remains. |
 
 ## Getting started
 
-Most notebooks and demos require an **OpenAI API key** (some also use Anthropic, Google, or OpenRouter keys), typically supplied via a local `.env` file.
+Use each project's own requirements and setup instructions. Most applications need an OpenAI API key; individual demos may additionally need Anthropic, Google, OpenRouter, Tavily, SerpApi, LangSmith, Langfuse, or Guardrails access.
 
-For the Week 2 RAG workshop specifically:
+For the SupportDesk RAG workshop, follow its documented **Python 3.12** setup:
 
 ```powershell
-# From Lectures/Week2_RAG/SupportDesk-RAG-Workshop
+Set-Location .\Lectures\Week2_RAG\SupportDesk-RAG-Workshop
 py -3.12 -m venv .venv
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\.venv\Scripts\Activate.ps1
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-pip install -r requirements.txt
-Copy-Item .env.example .env   # then add your OPENAI_API_KEY
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+# Configure OPENAI_API_KEY locally before running a module.
 ```
 
-> Note: The RAG workshop requires **Python 3.12** (`chromadb` does not support 3.13+).
-
-See each module's `README.md` / `notes.md` and the workshop README for detailed, per-topic instructions.
+Keep API keys out of source control. Run data-execution agents only on trusted inputs, and review external API usage/costs before executing notebooks. Consult project READMEs and module notes rather than assuming every week shares the same environment.
